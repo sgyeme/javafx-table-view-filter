@@ -66,7 +66,7 @@
             <Label alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" text="Username" GridPane.rowIndex="11" />
             <Label alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" text="First Name" GridPane.rowIndex="12" />
             <Label alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" text="Phone" GridPane.rowIndex="14" />
-            <TextField fx:id="searchField" GridPane.columnSpan="2" />
+            <TextField fx:id="searchField" promptText="Type here to search" GridPane.columnSpan="2" />
             <TextField fx:id="lastNameField" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="13" />
             <TextField fx:id="phoneField" GridPane.columnIndex="1" GridPane.columnSpan="2" GridPane.rowIndex="14" />
             <Label alignment="CENTER_RIGHT" maxWidth="1.7976931348623157E308" text="Last Name" GridPane.rowIndex="13" />
