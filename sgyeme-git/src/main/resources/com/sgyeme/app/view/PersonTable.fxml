@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+
+<TableView prefHeight="200" prefWidth="477.0" styleClass="extended-report-table-view" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.sgyeme.app.view.PersonTablePresenter">
+	<placeholder>
+		<Label text="" />
+	</placeholder>
+	<columns>
+		<TableColumn fx:id="usernameColumn" prefWidth="75.0" text="Username" />
+		<TableColumn fx:id="fistNameColumn" minWidth="100.0" prefWidth="200.0" text="First Name" />
+		<TableColumn fx:id="lastNameColumn" prefWidth="109.0" text="Last Name" />
+      <TableColumn fx:id="phoneColumn" prefWidth="75.0" text="Phone" />
+		<TableColumn fx:id="activeColumn" maxWidth="3000.0" prefWidth="41.0" text="Active" />
+	</columns>
+	<columnResizePolicy>
+		<TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+	</columnResizePolicy>
+</TableView>
