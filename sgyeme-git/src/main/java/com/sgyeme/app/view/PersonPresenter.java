@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import com.sgyeme.app.model.User;
 import com.sgyeme.app.model.UserBuilder;
+import com.sgyeme.app.model.UserFilter;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -38,27 +39,7 @@ public class PersonPresenter {
 
 		personTable.setItems(users);
 
-		TableViewUtils.addSearchFilter(personTable, searchField, (e, s) -> {
-			if (e == null) {
-				return false;
-			}
-			if (s == null || s.isEmpty()) {
-				return true;
-			}
-			var text = s.toLowerCase();
-
-			return Optional
-					.ofNullable(
-							e)
-					.filter(t ->Objects.toString(e.getUsername(), "").toLowerCase().contains(text)
-							|| Objects.toString(e.getFirstName(), "").toLowerCase().contains(text)
-							|| Objects.toString(e.getLastName(), "").toLowerCase().contains(text)
-							|| Objects.toString(e.getPhone(), "").toLowerCase().contains(text)
-							|| Optional.ofNullable(e.isActive()).map(Objects::toString).map(String::toLowerCase)
-									.filter(o -> o.contains(text)).isPresent())
-					.isPresent();
-
-		});
+		TableViewUtils.addSearchFilter(personTable, searchField,new UserFilter());
 	}
 	@FXML
 	private void clear() {
