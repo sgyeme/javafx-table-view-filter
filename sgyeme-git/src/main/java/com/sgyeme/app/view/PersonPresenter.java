@@ -30,6 +30,7 @@ public class PersonPresenter {
 	private TableView<User> personTable;
 	@FXML
 	private TextField searchField;
+	
 	private ObservableList<User> users = FXCollections.observableArrayList();
 	
 
@@ -54,8 +55,10 @@ public class PersonPresenter {
 
 	@FXML
 	private void insert() {
-		users.add(new UserBuilder().username(usernameField.getText()).firstName(firstNameField.getText())
-				.lastName(lastNameField.getText()).phone(phoneField.getText()).active(isDisable.isSelected()).build());
+		users.add(new UserBuilder().username(usernameField.getText()).
+				firstName(firstNameField.getText())
+				.lastName(lastNameField.getText()).phone(phoneField.getText()).
+				active(isDisable.isSelected()).build());
 
 		users.forEach(System.err::println);
 	}
