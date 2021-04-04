@@ -30,17 +30,26 @@ public class PersonPresenter {
 	private TableView<User> personTable;
 	@FXML
 	private TextField searchField;
-	
+
 	private ObservableList<User> users = FXCollections.observableArrayList();
-	
 
 	@FXML
 	private void initialize() {
 
 		personTable.setItems(users);
+		addSomeUsers();
 
-		TableViewUtils.addSearchFilter(personTable, searchField,new UserFilter());
+		TableViewUtils.addSearchFilter(personTable, searchField, new UserFilter());
 	}
+
+	private void addSomeUsers() {
+		users.addAll(new UserBuilder().username("sgyeme").firstName("Silas").
+				lastName("Joe").phone("02545842223").active(true).build(),
+				new UserBuilder().username("chrisy").firstName("Juliana").
+				lastName("Koomson").phone("0245878863").active(true).build()
+				);
+	}
+
 	@FXML
 	private void clear() {
 		users.clear();
@@ -48,17 +57,14 @@ public class PersonPresenter {
 
 	@FXML
 	private void close() {
-		Optional.ofNullable(usernameField.getScene()).
-		         map(Scene::getWindow).map(Stage.class::cast)
+		Optional.ofNullable(usernameField.getScene()).map(Scene::getWindow).map(Stage.class::cast)
 				.ifPresent(Stage::close);
 	}
 
 	@FXML
 	private void insert() {
-		users.add(new UserBuilder().username(usernameField.getText()).
-				firstName(firstNameField.getText())
-				.lastName(lastNameField.getText()).phone(phoneField.getText()).
-				active(isDisable.isSelected()).build());
+		users.add(new UserBuilder().username(usernameField.getText()).firstName(firstNameField.getText())
+				.lastName(lastNameField.getText()).phone(phoneField.getText()).active(isDisable.isSelected()).build());
 
 		users.forEach(System.err::println);
 	}
