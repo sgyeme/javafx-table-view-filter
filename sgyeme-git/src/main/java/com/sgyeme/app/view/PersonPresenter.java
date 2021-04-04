@@ -1,6 +1,5 @@
 package com.sgyeme.app.view;
 
-import java.util.Objects;
 import java.util.Optional;
 
 import com.sgyeme.app.model.User;
@@ -48,7 +47,8 @@ public class PersonPresenter {
 
 	@FXML
 	private void close() {
-		Optional.ofNullable(usernameField.getScene()).map(Scene::getWindow).map(Stage.class::cast)
+		Optional.ofNullable(usernameField.getScene()).
+		         map(Scene::getWindow).map(Stage.class::cast)
 				.ifPresent(Stage::close);
 	}
 
