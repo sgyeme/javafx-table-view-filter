@@ -56,7 +56,7 @@ public class AppFxmLoader {
 	private static String name(Class<?> presenter) {
 		int nameLegth = presenter.getSimpleName().toUpperCase().replace("CONTROLLER", "").replace("PRESENTER", "")
 				.length();
-		String name = presenter.getSimpleName().substring(0, nameLegth);
+		var name = presenter.getSimpleName().substring(0, nameLegth);
 		return name + ".fxml";
 	}
 
